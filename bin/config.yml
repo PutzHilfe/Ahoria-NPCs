@@ -1,0 +1,24 @@
+npc-tool: '&3Zeigestock'
+
+stocks:
+  double chest requirements:
+  - Assassine
+  - Bolzen-Schuetze
+  - Demonen-Jaeger
+  - Dieb
+  - Elementar-Magier
+  - Gladiator
+  - Hexer
+  - Jaeger
+  - Knappe
+  - Kopfgeld-Jaeger
+  - Krieger
+  - Magier
+  - Novize
+  - Paladin
+  - Priester
+  - Ritter
+  - Sammler
+  - Schattenlaeufer
+  - Schurke
+  - Waldlaeufer

@@ -1,0 +1,100 @@
+name: Name der Quest
+
+→ Erklärt sich hoffentlich von selbst. Zu sagen bleibt nur, dass dieser Name im Spiel zu sehen ist und
+  nicht mit dem Dateinamen identisch sein muss.
+
+
+
+beschreibung: Beschreibung der Quest
+
+→ Eine ungefähre Beschreibung der Quest, allerdings möglichst ohne die Nennung der konkreten Aufgaben, da diese bereits vom Plugin angezeigt werden.
+  Zum Beispiel könnten hier Hintergrundinfos oder derartiges angegeben werden.
+
+
+
+bedingungen:
+- q-quest1
+- l-2
+- i-diamond_sword
+
+→ Hier wird es schon "komplizierter". Hier kannst du Bedingungen einfügen, welche zur Annahme dieser Quest
+  erfüllt sein müssen. In diesem Beispiel muss der Spieler zur Annahme dieser Quest die Quest "quest1" abgeschlossen,
+  mindestens Level 2 erreicht haben und ein Diamantschwert mit sich tragen.
+  Zur Bearbeitung dieser Bedingungen kannst du, solange du das Format einhältst, direkt in der YML einer Quest
+  herumschreiben oder du benutzt die vorgefertigten Commands im Spiel.
+  
+  Diese wären:
+  /quest addcondition [questname] [bedingung] - Zum Hinzufügen einer Bedingung
+  /quest removecondition [questname] [id] - Zum Entfernen einer Bedingung. Hierbei musst du allerdings die ID der Bedingung
+                                            angeben, welche du unter /quest conditions [quest] finden kannst.
+                                            
+  Das Format der Bedingungen lässt sich oben schon recht gut ablesen. Als erstes gibst du die Art der Bedingung ein (q für Quest, l für Level
+  und i für ein Item), danach folgt ein Doppelpunkt und die Bedingung an sich ein. Bei einer Quest wäre das der Name der Quest, bei einem Level
+  die Levelanzahl und bei einem Item die genaue Umschreibung des Itemstacks.
+  Wie du das tust, ist hier anhand eines Beispiels erklärt:
+  
+  24 rote Wolle mit dem Anzeigenamen "Coole Wolle" und der Beschreibung "rot"
+  
+  wool;14,24,"Coole Wolle","rot"
+  
+  Solltest du innerhalb der Beschreibung mehrere Zeilen nutzen wollen, machst du das mit dem Semikolon (;):
+  
+  "rot;rot;rot" - Eine Beschreibung über 3 Zeilen, welche jeweils das Wort "rot" enthalten.
+  
+  Eine Liste aller Itemtypen, die du angeben kannst, findest du hier: http://jd.bukkit.org/rb/apidocs/org/bukkit/Material.html
+  
+  Fügst du ein Item über den Befehl im Spiel hinzu, kannst du allerdings auch einfach statt der Umschreibung 'inhand' schreiben (natürlich ohne ') und
+  das Plugin liest automatisch die Daten des Items in deiner Hand ab und speichert diese ein.
+  
+aufgaben:
+- kill:m-zombie,4,anzeigename
+- kill:p-spieler
+- kill:r-rasse,1
+- kill:u:uuid
+- collect:i-iron_hoe,20,Anzeigename,Beschreibung
+- move:world,x,y,z,radius
+- click:world,x,y,z
+
+→ In diesem Beispiel kommt einiges auf dich zu. In der ersten Aufgabe wird dir befohlen, 4 Mobs vom Typ Zombie zu töten.
+  Hierbei steht kill für den Befehl bzw. die Art der Aufgabe, m für die Tötung eines Mobs und mit zombie wird angegeben, welches
+  Mob genau getötet werden soll. Zu guter Letzt wird noch die Anzahl der zu tötenden Mobs genannt (hier 4).
+  Eine Liste der Monsterarten, die du angeben kannst, findest du hier: http://jd.bukkit.org/rb/apidocs/org/bukkit/entity/EntityType.html
+  In den folgenden beiden Aufgaben handelt es sich wieder um "kill"-Befehle. Nur wird mit p:spieler die Tötung des Spielers "spieler",
+  mit r:rasse die Tötung eines Spielers der Rasse "rasse" und mit u:uuid die Tötung eines Spielers/Monsters mit der UUID 'uuid' verlangt.
+  
+  Der "collect"-Befehl sollte nicht allzu schwer zu verstehen sein. Beginnst du eine Aufgabe mit collect, so haben die Spieler das Item
+  zu sammeln, welches du hinter dem Doppelpunkt angibst. Dies geschieht im selben Format wie bei den Bedingungen erklärt und sollte daher
+  keiner weiteren Erklärung bedürfen.
+  
+  Nun gibt es noch zwei weitere Aufgabentypen: move und click. Bei beiden musst du hinter dem Doppelpunkt die Welt und x-, y- und z-Koordinaten angeben, jeweils
+  getrennt durch Kommas. Bei move hast du außerdem die Möglichkeit, durch eine mit einem Komma angehängte Zahl anzugeben, welche den Radius des Ziels angibt. 
+  Was das Ziel bei den Aufgaben move und click ist, brauche ich wohl nicht erklären.
+  
+  Auch diese Aufgaben kannst du sowohl ingame als auch in der YML-Datei editieren. Die Befehle dazu lauten:
+  /quest addtask [questname] [task] - Zum Hinzufügen einer Aufgabe
+  /quest removetask [questname] [id] - Zum Entfernen einer Aufgabe. Hierbei musst du allerdings die ID der Aufgabe
+                                            angeben, welche du unter /quest tasks [quest] help finden kannst.
+  
+  
+  
+belohnungen:
+- q-quest3
+- l-1
+- i-diamond,4
+
+→ Hier wird es wieder vergleichsweise simpel. Genau wie bei den Bedingungen kannst du hier Quests, Level und/oder Items angeben.
+  Gibst du hier nun eine weitere Quest an, bekommst du bei Abschluss dieser Quest direkt die Aufgaben der Neuen und kannst so
+  beispielsweise Questreihen bilden.
+  
+  Wie immer hast du auch hier die Möglichkeit, diese Werte auch ingame zu bearbeiten. Die Befehle dazu lauten:
+  /quest addreward [questname] [reward] - Zum Hinzufügen einer Belohnung
+  /quest removereward [questname] [id] - Zum Entfernen einer Belohnung. Hierbei musst du allerdings die ID der Aufgabe
+                                            angeben, welche du unter /quest rewards [quest] finden kannst.
+                                            
+                                            
+                                            
+                                            
+
+→→→→ Wichtig: Bis auf den Namen der Quest muss keiner dieser Punkte angegeben werden. So kann man zum Beispiel Quests wie "Der Weg des Helden" erstellen,
+              welche weder abgebrochen, noch abgeschlossen werden können und einfach nur aus Dekorations- & Wirkungszwecken existieren.
+              Oder man lässt bei Quests einfach Bedingungen/Beschreibung und/oder Belohnungen weg, ganz nach Belieben.

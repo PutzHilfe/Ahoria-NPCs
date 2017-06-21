@@ -1,0 +1,29 @@
+name: AhoriaNPCs
+version: 0.1
+author: Thedarkreaper<3Esril
+
+main: main.AhoriaNPCs
+
+commands:
+  npc:
+    description: AhoriaNPCs command
+    usage: /<command> <args>
+  quest:
+    description: To manage quests
+    usage: /<command> <args>
+    aliases: [quests, aq]
+    
+permissions:
+  quest.*:
+    children:
+      quest.help: true
+      quest.list: true
+      quest.create: true
+      quest.delete: true
+      quest.edit: true
+      quest.book: true
+  npc.*:
+    children:
+      npc.help: true
+      npc.spawn: true
+      npc.edit: true

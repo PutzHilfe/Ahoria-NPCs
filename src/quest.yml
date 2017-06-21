@@ -1,0 +1,11 @@
+name: 'Beispielquest'
+
+beschreibung: 'Beispielbeschreibung'
+
+bedingungen: []
+
+aufgaben: []
+
+belohnungen: []
+
+HINWEIS: Ausfuehrliches Tutorial (Quests Tutorial.txt) hier im Quests-Ordner!

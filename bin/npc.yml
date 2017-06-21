@@ -1,0 +1,14 @@
+shop:
+  enabled: false
+stock:
+  enabled: false
+idle messages:
+- 'Hallo! Wie geht es Euch?'
+- 'Hallo! Was kann ich f%ur Euch tun?'
+- 'Hallo! Was ist Euer Anliegen?'
+- 'Ihr m%ochtet etwas?'
+- 'Hallo!'
+- 'Hallo %p!'
+- 'Hallo! Ich gr%usse euch!'
+- 'Ich gr%usse euch!'
+HINWEIS: 'Hier musst du statt Umlauten %a,%o,%u/%A,%O,%U, als Spielernamen %p und als Farbcode & nutzen!'
